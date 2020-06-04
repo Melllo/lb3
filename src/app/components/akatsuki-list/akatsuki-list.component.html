@@ -1,0 +1,51 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      {{ title }}
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-item>
+      <ion-label>name:</ion-label>
+      <ion-input
+        type="text"
+        name="name"
+        [(ngModel)]="akatsukiList.name"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>rank:</ion-label>
+      <ion-input
+        type="text"
+        name="rank"
+        [(ngModel)]="akatsukiList.rank"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>age:</ion-label>
+      <ion-input
+        type="number"
+        name="age"
+        [(ngModel)]="akatsukiList.age"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button *ngIf="isNew" color="primary" (click)="addNew()">
+      <ion-icon slot="start" name="add-circle"></ion-icon>
+      Добавить
+    </ion-button>
+
+    <ion-button
+      *ngIf="isNew"
+      color="danger"
+      class="ion-float-right"
+      (click)="cancelAdding()"
+    >
+      <ion-icon slot="start" name="close"></ion-icon>
+      Закрыть
+    </ion-button>
+  </ion-card-content>
+</ion-card>
